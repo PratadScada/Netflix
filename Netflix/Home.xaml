@@ -4,15 +4,99 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Netflix"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="736" d:DesignWidth="375"
       Title="Home">
 
     <Grid Background="Black">
+        <!--Layout-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        
+        <!--Top Nav-->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Padding="10" Grid.Column="0" Foreground="Gray" Background="Transparent" BorderThickness="0" Click="Button_Click">
+                <Image Source="/img/NetflixShortLogo.png" Height="39" Width="20"/>
+            </Button>
+            <Button Padding="10" Grid.Column="1" Foreground="Gray" Background="Transparent" BorderThickness="0">
+                <TextBlock Text="TV Shows" HorizontalAlignment="Center" Foreground="#FFC8C3C3" FontSize="13">
+                </TextBlock>
+            </Button>
+            <Button Padding="10" Grid.Column="2" Foreground="Gray" Background="Transparent" BorderThickness="0">
+                <TextBlock Text="Movies" HorizontalAlignment="Center" Foreground="#FFC8C3C3" FontSize="13">
+                </TextBlock>
+            </Button>
+            <Button Padding="10" Grid.Column="3" Foreground="Gray" Background="Transparent" BorderThickness="0">
+                <TextBlock Text="My List" HorizontalAlignment="Center" Foreground="#FFC8C3C3" FontSize="13">
+                </TextBlock>
+            </Button>
+        </Grid>
+        <!--Body-->
+        <Grid Grid.Row="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                
+
+            </ScrollViewer>
+        </Grid>
+        
+        <!--Bottom Nav-->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!-- Home Icon -->
+            <Button Padding="10" Grid.Column="0" Foreground="Gray" Background="#FF252323" BorderThickness="0">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="Home" HorizontalAlignment="Center" Height="30" Width="30" Foreground="Gray"/>
+                    <TextBlock Text="Home" HorizontalAlignment="Center" Foreground="Gray" FontSize="9"/>
+                </StackPanel>
+            </Button>
+
+            <!-- Search Icon -->
+            <Button Padding="10" Grid.Column="1" Foreground="Gray" Background="#FF252323" BorderThickness="0">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="Magnify" HorizontalAlignment="Center" Height="30" Width="30" Foreground="Gray"/>
+                    <TextBlock Text="Search" HorizontalAlignment="Center" Foreground="Gray" FontSize="9"/>
+                </StackPanel>
+            </Button>
+
+            <!-- Coming Soon Icon -->
+            <Button Padding="10" Grid.Column="2" Foreground="Gray" Background="#FF252323" BorderThickness="0">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="ClockOutline" HorizontalAlignment="Center" Height="30" Width="30" Foreground="Gray"/>
+                    <TextBlock Text="Coming Soon" HorizontalAlignment="Center" Foreground="Gray" FontSize="9"/>
+                </StackPanel>
+            </Button>
+
+            <!-- Downloads Icon -->
+            <Button Padding="10" Grid.Column="3" Foreground="Gray" Background="#FF252323" BorderThickness="0">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="Download" HorizontalAlignment="Center" Height="30" Width="30" Foreground="Gray"/>
+                    <TextBlock Text="Downloads" HorizontalAlignment="Center" Foreground="Gray" FontSize="9"/>
+                </StackPanel>
+            </Button>
+
+            <!-- More Icon -->
+            <Button Padding="10" Grid.Column="4" Foreground="Gray" Background="#FF252323" BorderThickness="0">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="DotsHorizontal" HorizontalAlignment="Center" Height="30" Width="30" Foreground="Gray"/>
+                    <TextBlock Text="More" HorizontalAlignment="Center" Foreground="Gray" FontSize="9"/>
+                </StackPanel>
+            </Button>
+        </Grid>
     </Grid>
 </Page>

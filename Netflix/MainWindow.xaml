@@ -14,5 +14,6 @@
            Height="78"
            Width="235"
            Stretch="Uniform" />
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

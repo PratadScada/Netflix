@@ -40,7 +40,8 @@ namespace Netflix
 
             // Navigate to the next page
             Profile profilePage = new Profile();
-            this.Content = profilePage;
+            MainFrame.Navigate(profilePage); // Use the Frame to navigate
+
         }
     }
 }

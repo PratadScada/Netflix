@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Netflix.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,23 @@ namespace Netflix
     /// </summary>
     public partial class Profile : Page
     {
+        public ObservableCollection<ProfileModel> Profiles { get; set; }
         public Profile()
         {
             InitializeComponent();
+
+            // Initialize the profile collection
+            Profiles = new ObservableCollection<ProfileModel>
+        {
+            new ProfileModel { Name = "Ememalo", ImageSource = "pack://application:,,,/img/Profile1.png" },
+            new ProfileModel { Name = "Onyeka", ImageSource = "pack://application:,,,/img/Profile2.png" },
+            new ProfileModel { Name = "Thelma", ImageSource = "pack://application:,,,/img/Profile3.png" },
+            new ProfileModel { Name = "Kids", ImageSource = "pack://application:,,,/img/Profile4.png" },
+            new ProfileModel { Name = "Add Profile", ImageSource = "pack://application:,,,/img/AddProfileIcon.png" }
+        };
+
+            // Set the DataContext for data binding
+            this.DataContext = this;
         }
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
@@ -31,26 +47,38 @@ namespace Netflix
         }
         private void Profile1_Click(object sender, RoutedEventArgs e)
         {
-            // Logic for Profile 1 click
-            MessageBox.Show("Profile 1 (Ememalo) selected!");
+            if (this.NavigationService != null)
+            {
+                Home home = new Home();
+                this.NavigationService.Navigate(home);
+            }
         }
 
         private void Profile2_Click(object sender, RoutedEventArgs e)
         {
-            // Logic for Profile 2 click
-            MessageBox.Show("Profile 2 (Onyeka) selected!");
+            if (this.NavigationService != null)
+            {
+                Home home = new Home();
+                this.NavigationService.Navigate(home);
+            }
         }
 
         private void Profile3_Click(object sender, RoutedEventArgs e)
         {
-            // Logic for Profile 3 click
-            MessageBox.Show("Profile 3 (Thelma) selected!");
+            if (this.NavigationService != null)
+            {
+                Home home = new Home();
+                this.NavigationService.Navigate(home);
+            }
         }
 
         private void Profile4_Click(object sender, RoutedEventArgs e)
         {
-            // Logic for Profile 4 click
-            MessageBox.Show("Profile 4 (Kids) selected!");
+            if (this.NavigationService != null)
+            {
+                Home home = new Home();
+                this.NavigationService.Navigate(home);
+            }
         }
 
         private void AddProfile_Click(object sender, RoutedEventArgs e)

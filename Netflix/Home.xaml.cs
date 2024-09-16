@@ -24,5 +24,14 @@ namespace Netflix
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService != null)
+            {
+                Profile profile = new Profile();
+                this.NavigationService.Navigate(profile);
+            }
+        }
     }
 }
